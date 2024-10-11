@@ -124,6 +124,35 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
                 draggedItem = null;
             });
+
+            cell.addEventListener("touchstart", (e) => {
+                draggedItem = cell;
+            });
+
+            cell.addEventListener("touchmove", (e) => {
+                e.preventDefault();
+                const touch = e.touches[0];
+                const targetElement = document.elementFromPoint(touch.clientX, touch.clientY);
+                if (targetElement && targetElement.classList.contains("cell")) {
+                    cell = targetElement;
+                }
+            });
+
+            cell.addEventListener("touchend", () => {
+                if (draggedItem && draggedItem !== cell) {
+                    swapElements(draggedItem, cell);
+                    if (checkForMatches()) {
+                        updateBoard();
+                        movesLeft--;
+                        movesLeftDisplay.textContent = movesLeft;
+                        scoreDisplay.textContent = score;
+                        if (movesLeft <= 0) {
+                            endGame();
+                        }
+                    }
+                }
+                draggedItem = null;
+            });
         });
     }
 
