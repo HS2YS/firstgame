@@ -81,22 +81,22 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    function startTimer() {
-        clearInterval(timer);
-        timer = setInterval(() => {
-            timeLeft--;
-            timerDisplay.textContent = timeLeft;
-            if (timeLeft <= 0) {
-                endGame();
-            }
-        }, 1000);
-    }
+    // function startTimer() {
+    //     clearInterval(timer);
+    //     timer = setInterval(() => {
+    //         timeLeft--;
+    //         timerDisplay.textContent = timeLeft;
+    //         if (timeLeft <= 0) {
+    //             endGame();
+    //         }
+    //     }, 1000);
+    // }
 
-    function endGame() {
-        clearInterval(timer);
-        alert(`Игра окончена! Ваши очки: ${score}`);
-        resetGame();
-    }
+    // function endGame() {
+    //     clearInterval(timer);
+    //     alert(`Игра окончена! Ваши очки: ${score}`);
+    //     resetGame();
+    // }
 
     function addDragAndDropEvents() {
         let draggedItem = null;
