@@ -2,11 +2,15 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 h1 {
     color: #333;
+}
+
+.game-info {
+    margin-bottom: 20px;
 }
 
 #game-board {
@@ -25,6 +29,7 @@ h1 {
     border: 1px solid #ccc;
     border-radius: 5px;
     cursor: pointer;
+    transition: transform 0.2s;
 }
 
 .cell[data-color="red"] {
@@ -45,4 +50,15 @@ h1 {
 
 .cell[data-color="purple"] {
     background-color: purple;
+}
+
+.cell.bonus {
+    border: 2px solid gold;
+}
+
+#reset-game {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
 }
